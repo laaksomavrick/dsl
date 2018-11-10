@@ -54,18 +54,22 @@ const query = queryBuilder
     .search({ query: 'vehicle' }) // this could become more complicated depending on filtering
     .withToken(token);
 
-const results = await query.execute();
+// const results = await query.execute();
 
 // chainability ex:
 
 class Chainable {
+    constructor(something) {
+        this.something = something;
+    }
+
     hello() {
         console.log('hello');
         return this;
     }
 }
 
-const chainable = new Chainable();
+const chainable = new Chainable('asdasd');
 
 chainable.hello().hello();
 
