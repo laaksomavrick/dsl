@@ -52,6 +52,7 @@ const query = queryBuilder
     .sort({ name: 'asc' }) // need to confirm these sorts exist on the fields metadata
     .sort({ category: 'desc' }) // objects keys don't stay in order
     .search({ query: 'vehicle' }) // this could become more complicated depending on filtering
+    .page(10)
     .withToken(token);
 
 // const results = await query.execute();
