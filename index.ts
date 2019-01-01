@@ -1,22 +1,26 @@
+// Scratchpad for a simple wrapper around the Elasticsearch client
+
+// copied from SO somewhere
 const snakeCase = function(string) {
     return string.replace(/([A-Z])/g, function($1) {
         return '_' + $1.toLowerCase();
     });
 };
 
+// a sample input
 const request = {
-    solutionId: 'a-solution-id',
-    siteId: 'a-site-id',
-    profileId: 'a-profile-id',
+    oneId: 'a-solution-id',
+    twoId: 'a-site-id',
+    threeId: 'a-profile-id',
     search: {
-        query: 'vehicle',
+        query: 'somethi',
         sort: [
             {
                 field: 'name',
                 order: 'desc'
             },
             {
-                field: 'category',
+                field: 'certainty',
                 order: 'asc'
             }
         ],
@@ -126,7 +130,8 @@ class QueryBuilder {
     }
 
     public withToken() {
-        // all that parsing crap; set search_after
+        // all that parsing stuff; set search_after
+        // todo
         return this;
     }
 }
